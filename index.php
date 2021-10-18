@@ -44,6 +44,7 @@ $p_censured = str_replace($censuredWord, "<span class='censured'>" . $replacedWo
             padding: 0 0.2em;
             margin: 0 0.1em;
             font-weight: bold;
+            text-decoration: line-through;
         }
     </style>
 </head>
