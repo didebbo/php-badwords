@@ -1,5 +1,5 @@
 <?php
-$censuredWord = $_GET["censured"];
+$censuredWord = $_GET["word"];
 $p =
     "
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus similique aperiam repudiandae perferendis esse, enim quo ab veritatis perspiciatis dolore, voluptatibus non error, voluptas totam aspernatur veniam mollitia consequatur consequuntur!
@@ -28,7 +28,8 @@ $p_censured = str_replace($censuredWord, "***", $p);
             padding: 1em;
         }
 
-        p {
+        p,
+        form {
             /* border-top: 0.1em solid; */
             border-bottom: 0.1em solid;
             padding-bottom: 0.5em;
@@ -38,6 +39,14 @@ $p_censured = str_replace($censuredWord, "***", $p);
 </head>
 
 <body>
+    <form>
+        <div>
+            <label for="word">
+                <input type="text" name="word" id="word">
+                <button type="submit">Censura</button>
+            </label>
+        </div>
+    </form>
     <p>
         Lunghezza testo: <strong><?php echo strlen($p); ?></strong>
     </p>
