@@ -6,7 +6,7 @@ $p =
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium, quam tempore, porro dolore, minima in odio assumenda quos ipsa omnis consequuntur voluptatem! Commodi pariatur reiciendis quisquam omnis rem culpa.
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed praesentium quia perferendis optio eligendi quas porro exercitationem cum vero inventore, fuga, ut unde aspernatur nesciunt non quisquam sequi tenetur excepturi?
     ";
-$p_censured = str_replace($censuredWord, "***", $p);
+$p_censured = str_replace($censuredWord, "<span class='censured'>censured</span>", $p);
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +34,15 @@ $p_censured = str_replace($censuredWord, "***", $p);
             border-bottom: 0.1em solid;
             padding-bottom: 0.5em;
             margin-bottom: 0.5em;
+        }
+
+        .censured {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            padding: 0 0.2em;
+            margin: 0 0.1em;
+            font-weight: bold;
         }
     </style>
 </head>
