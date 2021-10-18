@@ -7,7 +7,7 @@ $p =
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium, quam tempore, porro dolore, minima in odio assumenda quos ipsa omnis consequuntur voluptatem! Commodi pariatur reiciendis quisquam omnis rem culpa.
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed praesentium quia perferendis optio eligendi quas porro exercitationem cum vero inventore, fuga, ut unde aspernatur nesciunt non quisquam sequi tenetur excepturi?
     ";
-$p_censured = str_replace($censuredWord, "<span class='censured'>" . $replacedWord . "</span>", $p);
+$p_censured = str_ireplace($censuredWord, "<span class='censured'>" . $replacedWord . "</span>", $p);
 ?>
 
 <!DOCTYPE html>
