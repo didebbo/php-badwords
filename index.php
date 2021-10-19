@@ -1,5 +1,5 @@
 <?php
-$censuredWord = isset($_GET["word"]);
+$censuredWord = isset($_POST["word"]) && trim($_POST["word"]) != "" ? $_POST["word"] : null;
 $replacedWord = "censured";
 $p =
     "
@@ -50,7 +50,7 @@ $p_censured = str_ireplace($censuredWord, "<span class='censured'>" . $replacedW
 </head>
 
 <body>
-    <form>
+    <form method="POST">
         <div>
             <label for="word">
                 <input type="text" name="word" id="word">
@@ -64,15 +64,17 @@ $p_censured = str_ireplace($censuredWord, "<span class='censured'>" . $replacedW
     <p>
         <?php echo $p; ?>
     </p>
-    <p>
-        Parola da censurare: <strong><?php echo $censuredWord; ?></strong>
-    </p>
-    <p>
-        <?php echo $p_censured; ?>
-    </p>
-    <p>
-        Lunghezza testo: <strong><?php echo strlen($p_censured); ?></strong>
-    </p>
+    <?php if ($censuredWord) { ?>
+        <p>
+            Parola da censurare: <strong><?php echo $censuredWord; ?></strong>
+        </p>
+        <p>
+            <?php echo $p_censured; ?>
+        </p>
+        <p>
+            Lunghezza testo: <strong><?php echo strlen($p_censured); ?></strong>
+        </p>
+    <?php } ?>
 </body>
 
 </html>
