@@ -1,5 +1,5 @@
 <?php
-$censuredWord = $_GET["word"];
+$censuredWord = isset($_GET["word"]);
 $replacedWord = "censured";
 $p =
     "
